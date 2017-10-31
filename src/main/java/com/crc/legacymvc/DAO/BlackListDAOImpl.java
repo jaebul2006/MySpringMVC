@@ -22,5 +22,10 @@ public class BlackListDAOImpl implements BlackListDAO {
 		return sqlSession.selectList(namespace + ".blacklist");
 	}
 	
+	@Override
+	public void insertblacklist(BlackListBean blb) throws Exception{
+		sqlSession.insert(namespace + ".insertblacklist", blb); 
+	}
+	
 }
 

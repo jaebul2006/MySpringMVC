@@ -20,4 +20,9 @@ public class BlackListServiceImpl implements BlackListService{
 		return dao.blacklist();
 	}
 	
+	@Override
+	public void insertblacklist(BlackListBean blb) throws Exception{
+		dao.insertblacklist(blb);
+	}
+	
 }
