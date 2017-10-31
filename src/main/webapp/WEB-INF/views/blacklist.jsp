@@ -8,9 +8,9 @@
 <title>blacklist</title>
 </head>
 <body>
-	<c:forEach items="${list}" var="login">
-	id = ${login.id }<br>
-	password = ${login.password }<br>
+	<c:forEach items="${list}" var="blacklist">
+	id = ${blacklist.id }<br>
+	password = ${blacklist.password }<br>
 	</c:forEach>
 </body>
 </html>
