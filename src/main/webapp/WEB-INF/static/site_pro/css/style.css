@@ -30,7 +30,7 @@ h6{font-size:14px;}
 /*********************************header*************************************/
 header{position:relative;z-index:99;padding:31px 0 25px 0;width:100%; background:url(../images/header-line.jpg) 0 0 repeat-x;}
 header h1{ padding-bottom:39px;}
-header h1 a{ display:block; background: url(../images/solideng_logo.png) 0 0 no-repeat;width:410px; height:62px; text-indent:-5000px;}
+header h1 a{ display:block; background: url(../images/solideng_logo.png) 0 0 no-repeat;width:215px; height:62px; text-indent:-5000px;}
 nav.main-menu{ width:950px; margin:0 auto; background:url(../images/bg-nav.png) 0 0 repeat; padding-bottom:6px;}
 /* menu */
 .sf-menu, .sf-menu * {margin:0;padding:0;list-style:none;}

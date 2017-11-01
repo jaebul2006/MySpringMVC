@@ -18,7 +18,7 @@
 	
 	<br>
 	<br>
-	<form:form method = "GET" action = "/legacymvc/home">
+	<form:form method = "GET" action = "/legacymvc">
 		<input type = "submit" value = "홈으로"/>
 	</form:form>
 

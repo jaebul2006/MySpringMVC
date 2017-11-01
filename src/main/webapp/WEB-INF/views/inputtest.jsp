@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<h2>블랙리스트 입력</h2>
+<h2>회원등록 입력</h2>
 
 <form name="form1" method="post" action="/legacymvc/registmember" onsubmit="" >
 아이디 : <input type="text" name="id" value="" /><br/>
