@@ -24,9 +24,9 @@
 
 <h2>블랙리스트 입력</h2>
 
-<form name="form1" method="post" action="registmember" onsubmit="" >
+<form name="form1" method="post" action="/legacymvc/registmember" onsubmit="" >
 아이디 : <input type="text" name="id" value="" /><br/>
-패스워드 : <input type="text" name="password" value="" /><br />
+패스워드 : <input type="password" name="password" value="" /><br />
 <input type="button" value="확인" onclick="checkForm()">
 </form>
 
