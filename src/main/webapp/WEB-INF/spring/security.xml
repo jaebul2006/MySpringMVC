@@ -15,7 +15,9 @@
 
 	<jdbc-user-service data-source-ref="dataSource" id="userService"
 	users-by-username-query="SELECT EMAIL as username, PASSWORD as password, ENABLED as enabled FROM user WHERE EMAIL=?"
-	authorities-by-username-query="SELECT EMAIL as username, AUTHORITY as authority FROM user u WHERE EMAIL=?"/>
+	authorities-by-username-query="SELECT u.EMAIL as username, r.AUTHORITY as authority FROM user u, user_role r 
+							WHERE u.EMAIL= r.EMAIL
+							AND u.EMAIL=?"/>
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService"></authentication-provider>
