@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<%@ page session="false" %>
+<%@ page pageEncoding="utf-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-  	<title>솔리드이엔지 CSP</title>
-  	<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>솔리드이엔지 CSP</title>
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Your name">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="./static/site_pro/css/style.css">
+    <script src="./static/site_pro/js/jquery-1.7.1.min.js"></script>
+    <script src="./static/site_pro/js/script.js"></script>
     
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
@@ -22,10 +25,12 @@
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
+
 </head>
 <body>
+
 <!-- PRO Framework Panel Begin -->
-<div id="advanced"><span class="trigger"><strong></strong><em></em></span><div class="bg_pro"><div class="pro_main"><a href="" class="pro_logo"></a><ul class="pro_menu"><li><a href="index.html"><img src="images/pro_home.png" alt=""></a></li><li><a href="404.html">Pages<span></span></a><ul>	<li><a href="under_construction.html">Under Construction</a></li><li><a href="intro.html">Intro Page</a></li><li><a href="404.html">404 page</a></li></ul></li><li><a href="layouts.html">Layouts</a></li><li><a href="typography.html">Typography</a></li><li><a href="portfolio.html">Gallery Layouts<span></span></a><ul><li><a href="portfolio.html">Portfolio</a></li><li><a href="just-slider.html">Sliders</a><ul><li><a href="just-slider.html">Just Slider</a></li><li><a href="kwicks.html">Kwicks Slider</a></li><li><a href="functional-slider.html">Functional Slider</a></li></ul></li><li><a href="gallery-page1.html">Gallery</a></li></ul></li><li><a href="misc.html">Extras<span></span></a><ul><li><a href="social_media.html">Social and Media<br> Sharing</a></li><li><a href="css3.html">CSS3 Tricks</a></li><li><a href="misc.html">Misc</a></li></ul></li></ul><div class="clear"></div></div></div><div class="bg_pro2"></div></div>
+<div id="advanced"><span class="trigger"><strong></strong><em></em></span><div class="bg_pro"><div class="pro_main"><a href="" class="pro_logo"></a><ul class="pro_menu"><li><a href="index.html"><img src="./static/site_pro/images/pro_home.png" alt=""></a></li><li><a href="./static/site_pro/404.html">Pages<span></span></a><ul>	<li><a href="./static/site_pro/under_construction.html">Under Construction</a></li><li><a href="./static/site_pro/intro.html">Intro Page</a></li><li><a href="./static/site_pro/404.html">404 page</a></li></ul></li><li><a href="./static/site_pro/layouts.html">Layouts</a></li><li><a href="./static/site_pro/typography.html">Typography</a></li><li><a href="./static/site_pro/portfolio.html">Gallery Layouts<span></span></a><ul><li><a href="./static/site_pro/portfolio.html">Portfolio</a></li><li><a href="./static/site_pro/just-slider.html">Sliders</a><ul><li><a href="./static/site_pro/just-slider.html">Just Slider</a></li><li><a href="./static/site_pro/kwicks.html">Kwicks Slider</a></li><li><a href="./static/site_pro/functional-slider.html">Functional Slider</a></li></ul></li><li><a href="./static/site_pro/gallery-page1.html">Gallery</a></li></ul></li><li><a href="./static/site_pro/misc.html">Extras<span></span></a><ul><li><a href="./static/site_pro/social_media.html">Social and Media<br> Sharing</a></li><li><a href="./static/site_pro/css3.html">CSS3 Tricks</a></li><li><a href="./static/site_pro/misc.html">Misc</a></li></ul></li></ul><div class="clear"></div></div></div><div class="bg_pro2"></div></div>
 <!-- PRO Framework Panel End -->
 <div class="bg-main">
 	<header>
@@ -40,7 +45,17 @@
 						 <a onClick="document.getElementById('search2').submit()">search</a>
 					</form>
 				</div>
-				
+				<!-- 로그인 상황 및 로그아웃관련폼  -->
+				<div class="log_container">
+					<div>
+						<p> 안녕하세요. <b><c:out value="${pageContext.request.remoteUser}" /></b>
+						<c:url var="logoutUrl" value="/logout" />
+						<form class="form-inline" action="${logoutUrl}" method="post">
+      						<input type="submit" value="로그아웃" />
+      						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    					</form>
+					</div>
+				</div>
 			</div>
 		</div>
 		<nav class="main-menu">
@@ -51,12 +66,9 @@
 						<li><a href="more.html">약도</a></li>
 					</ul>
 				</li>
-				<!--  <li><a href="index-1.html"><em>콘텐츠 목록</em><strong></strong></a></li> -->
-				<li><a href="../threejs/solidpanorama.html"><em>콘텐츠 목록</em><strong></strong></a></li>
-				<!--  <li><a href="index-2.html"><em>회원 가입</em><strong></strong></a></li> -->
-				<li><a href="../../inputtest"><em>회원 가입</em><strong></strong></a></li>
-				<!--  <li><a href="index-3.html"><em>회원 목록</em><strong></strong></a></li> -->
-				<li><a href="../../blacklist"><em>회원 목록</em><strong></strong></a></li>
+				<li><a href="./static/threejs/solidpanorama.html"><em>콘텐츠 목록</em><strong></strong></a></li>
+				<li><a href="inputtest"><em>회원 가입</em><strong></strong></a></li>
+				<li><a href="blacklist"><em>회원 목록</em><strong></strong></a></li>
 				<li><a href="index-4.html"><em>고객사 목록</em><strong></strong></a></li>
 				<li><a href="index-5.html"><em>Clients</em><strong></strong></a></li>
 				<li class="last"><a href="index-6.html"><em>contacts</em><strong></strong></a></li>
@@ -67,15 +79,15 @@
 			<div class="main-slider">
 				<ul class="items">
 					<li>
-						<img src="images/jdh.jpg" alt="" />
+						<img src="./static/site_pro/images/jdh.jpg" alt="" />
 						<div class="slider-banner"><span>솔리드 이엔지1</span></div>
 					</li>
 					<li>
-						<img src="images/booth.jpg" alt="" />
+						<img src="./static/site_pro/images/booth.jpg" alt="" />
 						<div class="slider-banner"><span>솔리드 이엔지2</span></div>
 					</li>
 					<li>
-						<img src="images/boss.jpg" alt="" />
+						<img src="./static/site_pro/images/boss.jpg" alt="" />
 						<div class="slider-banner"><span>솔리드 이엔지3</span></div>
 					</li>
 				</ul>
@@ -88,8 +100,8 @@
 				<div class="services first">
 					<a href="more.html">
 						<em>
-							<img src="images/1page_img1.png" alt="">
-							<img src="images/1page_img1-hover.png" alt="" class="image-hover">
+							<img src="./static/site_pro/images/1page_img1.png" alt="">
+							<img src="./static/site_pro/images/1page_img1-hover.png" alt="" class="image-hover">
 						</em>
 						<span>Our <strong>Business</strong></span>
 					</a>
@@ -97,8 +109,8 @@
 				<div class="services">
 					<a href="more.html">
 						<em>
-							<img src="images/1page_img2.png" alt="">
-							<img src="images/1page_img2-hover.png" alt="" class="image-hover">
+							<img src="./static/site_pro/images/1page_img2.png" alt="">
+							<img src="./static/site_pro/images/1page_img2-hover.png" alt="" class="image-hover">
 						</em>
 						<span>Our <strong>Approach</strong></span>
 					</a>
@@ -106,8 +118,8 @@
 				<div class="services">
 					<a href="more.html">
 						<em>
-							<img src="images/1page_img3.png" alt="">
-							<img src="images/1page_img3-hover.png" alt="" class="image-hover">
+							<img src="./static/site_pro/images/1page_img3.png" alt="">
+							<img src="./static/site_pro/images/1page_img3-hover.png" alt="" class="image-hover">
 						</em>
 						<span>Lead <strong>Generation</strong></span>
 					</a>
@@ -115,8 +127,8 @@
 				<div class="services">
 					<a href="more.html">
 						<em>
-							<img src="images/1page_img4.png" alt="">
-							<img src="images/1page_img4-hover.png" alt="" class="image-hover">
+							<img src="./static/site_pro/images/1page_img4.png" alt="">
+							<img src="./static/site_pro/images/1page_img4-hover.png" alt="" class="image-hover">
 						</em>
 						<span>Corporate <strong>Governance</strong></span>
 					</a>
@@ -124,8 +136,8 @@
 				<div class="services last">
 					<a href="more.html">
 						<em>
-							<img src="images/1page_img5.png" alt="">
-							<img src="images/1page_img5-hover.png" alt="" class="image-hover">
+							<img src="./static/site_pro/images/1page_img5.png" alt="">
+							<img src="./static/site_pro/images/1page_img5-hover.png" alt="" class="image-hover">
 						</em>
 						<span>Marketing <strong>Services</strong></span>
 					</a>
@@ -141,19 +153,19 @@
 			<div class="wrapper">
 				<div class="grid_8">
 					<h2>사랑해요솔리드이엔지</h2>
-					<img src="images/1page_1.jpg" alt="">
+					<img src="./static/site_pro/images/1page_1.jpg" alt="">
 					<p class="pad">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산. 대한사람 대한으로 길이 보전하세.</p>
 					<a href="more.html" class="button">Read More</a>
 				</div>
 				<div class="grid_8">
 					<h2>여윽시솔리드이엔지다</h2>
-					<img src="images/1page_2.jpg" alt="">
+					<img src="./static/site_pro/images/1page_2.jpg" alt="">
 					<p class="pad">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산. 대한사람 대한으로 길이 보전하세.</p>
 					<a href="more.html" class="button">Read More</a>
 				</div>
 				<div class="grid_8">
 					<h2>우리는쩔어요</h2>
-					<img src="images/1page_3.jpg" alt="">
+					<img src="./static/site_pro/images/1page_3.jpg" alt="">
 					<p class="pad">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산. 대한사람 대한으로 길이 보전하세.</p>
 					<a href="more.html" class="button">Read More</a>
 				</div>
@@ -163,11 +175,11 @@
 					<div class="padline2"><div class="lineH"></div></div>
 					<h2 class="padtitle22">컨소시엄</h2>
 					<ul class="partners">
-						<li><a href="http://knuh.knu.ac.kr"><img src="images/knuh.png" alt=""></a></li>
-						<li><a href="http://www.kaist.edu/html/en/index.html"><img src="images/KAIST_logo.png" alt=""></a></li>
-						<li><a href="http://www.cukrnd-iacf.ac.kr"><img src="images/catholic.png" alt=""></a></li>
-						<li><a href="http://offedu.konkuk.ac.kr/"><img src="images/ku.png" alt=""></a></li>
-						<li><a href="http://www.skonec.com"><img src="images/skonec.png" alt=""></a></li>
+						<li><a href="http://knuh.knu.ac.kr"><img src="./static/site_pro/images/knuh.png" alt=""></a></li>
+						<li><a href="http://www.kaist.edu/html/en/index.html"><img src="./static/site_pro/images/KAIST_logo.png" alt=""></a></li>
+						<li><a href="http://www.cukrnd-iacf.ac.kr"><img src="./static/site_pro/images/catholic.png" alt=""></a></li>
+						<li><a href="http://offedu.konkuk.ac.kr/"><img src="./static/site_pro/images/ku.png" alt=""></a></li>
+						<li><a href="http://www.skonec.com"><img src="./static/site_pro/images/skonec.png" alt=""></a></li>
 					</ul>
 				</div>
 			</div>
@@ -215,5 +227,6 @@
 		</div>
 	</div>
 </footer>
+
 </body>
 </html>

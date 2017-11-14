@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+		 xmlns:b="http://www.springframework.org/schema/beans"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http />
+
+	<!--  
+	<user-service>
+		<user name="solideng" password="1234" authorities="ROLE_USER" />
+	</user-service>
+	-->
+
+	<jdbc-user-service data-source-ref="dataSource" id="userService"
+	users-by-username-query="SELECT EMAIL as username, PASSWORD as password, ENABLED as enabled FROM user WHERE EMAIL=?"
+	authorities-by-username-query="SELECT EMAIL as username, AUTHORITY as authority FROM user u WHERE EMAIL=?"/>
+
+	<authentication-manager>
+		<authentication-provider user-service-ref="userService"></authentication-provider>
+	</authentication-manager>
+
+
+</b:beans>
+

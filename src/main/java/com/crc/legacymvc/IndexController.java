@@ -10,8 +10,8 @@ public class IndexController {
 	@RequestMapping(value = "/", method=RequestMethod.GET)
 	public String redirect(){
 		
-		return "redirect:/static/site_pro/index.html";
-		
+		//return "redirect:/static/site_pro/index.html";
+		return "index";
 	}
 	
 }

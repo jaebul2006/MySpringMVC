@@ -17,6 +17,7 @@
 	솔리드 이엔지 서비스 플랫폼
 </h1>
 
+
 <div id="main_btns">
 	<form:form method = "GET" action = "/legacymvc/panorama">
 		<input type = "submit" class="btn btn-info" value = "컨텐츠 목록 이동"/>
