@@ -5,7 +5,20 @@
 		 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<http />
+	<http auto-config="true">
+		<intercept-url pattern="/inputtest" access="hasRole('ROLE_USER')" />
+		
+		<!--  아래주석은 커스터마이징 로그인 페이지가 필요하면 구현하장, 로그인이 성공하면 이동해야할 url 등동
+		<form-login login-page="/login"
+							username-parameter="username"
+							password-parameter="password"
+							login-processing-url="/login"
+							default-target-url="/inputtest"
+							authentication-failure-url="/login"
+							always-use-default-target="true"
+							/>-->
+	</http>
+		
 
 	<!--  
 	<user-service>
