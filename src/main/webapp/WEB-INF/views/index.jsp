@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <%@ page pageEncoding="utf-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -48,12 +48,31 @@
 				<!-- 로그인 상황 및 로그아웃관련폼  -->
 				<div class="log_container">
 					<div>
+					<c:choose>
+						<c:when test="${session_login != null}">
+							<p> 안녕하세요. <b><c:out value="${pageContext.request.remoteUser}" /></b>
+							<c:url var="logoutUrl" value="/logoutDo" />
+							<form class="form-inline" action="${logoutUrl}" method="post">
+	      						<input type="submit" value="로그아웃" />
+	      						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	    					</form>
+						</c:when>
+						<c:otherwise>
+							<c:url var="loginUrl" value="/login" />
+							<form class="form-inline" action="${loginUrl}" method="get">
+	      						<input type="submit" value="로그인" />
+	      						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	    					</form>
+						</c:otherwise>
+					</c:choose>
+						<!--  
 						<p> 안녕하세요. <b><c:out value="${pageContext.request.remoteUser}" /></b>
 						<c:url var="logoutUrl" value="/logout" />
 						<form class="form-inline" action="${logoutUrl}" method="post">
       						<input type="submit" value="로그아웃" />
       						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     					</form>
+    					-->
 					</div>
 				</div>
 			</div>
@@ -67,7 +86,7 @@
 					</ul>
 				</li>
 				<li><a href="./static/threejs/solidpanorama.html"><em>콘텐츠 목록</em><strong></strong></a></li>
-				<li><a href="inputtest"><em>회원 가입</em><strong></strong></a></li>
+				<li><a href="download_page"><em>수술항법 다운로드</em><strong></strong></a></li>
 				<li><a href="blacklist"><em>회원 목록</em><strong></strong></a></li>
 				<li><a href="index-4.html"><em>고객사 목록</em><strong></strong></a></li>
 				<li><a href="index-5.html"><em>Clients</em><strong></strong></a></li>
