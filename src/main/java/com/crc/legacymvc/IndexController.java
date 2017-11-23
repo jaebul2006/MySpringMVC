@@ -44,11 +44,15 @@ public class IndexController {
 		return "index";
 	}
 	
-	
 	@RequestMapping(value = "/login_success", method=RequestMethod.GET)
 	public String login_success(HttpSession session) {
 		session.setAttribute("session_login", "session_login");
 		logger.info("로그인 세션 is {}.", session);
+		return "index";
+	}
+	
+	@RequestMapping(value = "/login_fail", method=RequestMethod.GET)
+	public String login_fail(HttpServletRequest request) {
 		return "index";
 	}
 	
@@ -61,5 +65,6 @@ public class IndexController {
 	public void download_page() {
 		
 	}
+	
 	
 }

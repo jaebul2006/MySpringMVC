@@ -2,7 +2,8 @@
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="true" %>
 <%@ page pageEncoding="utf-8" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!DOCTYPE HTML5>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,7 +38,7 @@
 		<div class="container_24">
 			<div class="wrapper">
 				<div class="grid_17">
-					<h1><a href="index.html">Idealex</a></h1>
+					<h1><a href="/legacymvc">Idealex</a></h1>
 				</div>
 				<div class="grid_7">
 					<form id="search2">
@@ -65,21 +66,13 @@
 	    					</form>
 						</c:otherwise>
 					</c:choose>
-						<!--  
-						<p> 안녕하세요. <b><c:out value="${pageContext.request.remoteUser}" /></b>
-						<c:url var="logoutUrl" value="/logout" />
-						<form class="form-inline" action="${logoutUrl}" method="post">
-      						<input type="submit" value="로그아웃" />
-      						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    					</form>
-    					-->
 					</div>
 				</div>
 			</div>
 		</div>
 		<nav class="main-menu">
 			<ul class="sf-menu">
-				<li class="current"><a href="index.html"><em>솔리드 이엔지</em><strong></strong></a><ul>
+				<li class="current"><a href="/legacymvc"><em>솔리드 이엔지</em><strong></strong></a><ul>
 						<li><a href="more.html">대표 인사말</a></li>
 						<li><a href="more.html">오시는 길</a></li>
 						<li><a href="more.html">약도</a></li>
@@ -171,19 +164,19 @@
 			</div>
 			<div class="wrapper">
 				<div class="grid_8">
-					<h2>사랑해요솔리드이엔지</h2>
+					<h2>솔리드이엔지1</h2>
 					<img src="./static/site_pro/images/1page_1.jpg" alt="">
 					<p class="pad">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산. 대한사람 대한으로 길이 보전하세.</p>
 					<a href="more.html" class="button">Read More</a>
 				</div>
 				<div class="grid_8">
-					<h2>여윽시솔리드이엔지다</h2>
+					<h2>솔리드이엔지2</h2>
 					<img src="./static/site_pro/images/1page_2.jpg" alt="">
 					<p class="pad">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산. 대한사람 대한으로 길이 보전하세.</p>
 					<a href="more.html" class="button">Read More</a>
 				</div>
 				<div class="grid_8">
-					<h2>우리는쩔어요</h2>
+					<h2>솔리드이엔지3</h2>
 					<img src="./static/site_pro/images/1page_3.jpg" alt="">
 					<p class="pad">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산. 대한사람 대한으로 길이 보전하세.</p>
 					<a href="more.html" class="button">Read More</a>
@@ -238,9 +231,9 @@
 			<div class="grid_7">
 				<h4>Follow Us</h4>
 				<ul class="tooltips">
-					<li><a href="more.html"><img src="images/icon1.png" alt=""><span>RSS</span></a></li>
-					<li><a href="more.html"><img src="images/icon3.png" alt=""><span>Facebook</span></a></li>
-					<li><a href="more.html"><img src="images/icon2.png" alt=""><span>Twitter</span></a></li>
+					<li><a href="more.html"><img src="./static/site_pro/images/icon1.png" alt=""><span>RSS</span></a></li>
+					<li><a href="more.html"><img src="./static/site_pro/images/icon3.png" alt=""><span>Facebook</span></a></li>
+					<li><a href="more.html"><img src="./static/site_pro/images/icon2.png" alt=""><span>Twitter</span></a></li>
 				</ul>
 			</div>
 		</div>
